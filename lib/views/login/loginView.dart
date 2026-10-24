@@ -1,15 +1,22 @@
 import 'package:dsw60288/utils/AppText.dart';
 import 'package:dsw60288/utils/appColors.dart';
 import 'package:dsw60288/utils/appImages.dart';
+import 'package:dsw60288/views/widgets/basicTextFormField.dart';
 import 'package:flutter/material.dart';
 
 import '../register/registerViews.dart';
 
-class Loginview extends StatelessWidget {
+class Loginview extends StatefulWidget {
   const Loginview({super.key});
 
   @override
+  State<Loginview> createState() => _LoginviewState();
+}
+
+class _LoginviewState extends State<Loginview> {
+  @override
   Widget build(BuildContext context) {
+    var boolValue = false;
     return SafeArea(
       child: Scaffold(
         body: SizedBox(
@@ -23,9 +30,9 @@ class Loginview extends StatelessWidget {
                 SizedBox(height: 21),
                 _SingIn(),
                 SizedBox(height: 42,),
-                TextFormField(),
+                Basictextformfield(initialValue: 'email',),
                 SizedBox(height: 40,),
-                TextFormField(),
+                Basictextformfield(initialValue: 'passowrd',),
                 ElevatedButton(
                   child: const Text('Register'),
                   onPressed: () {
@@ -38,8 +45,11 @@ class Loginview extends StatelessWidget {
                   },
                 ),
                 GestureDetector(
-                    onTap: (){},
-                    child: Text(Apptext.SingUp, style: TextStyle(fontSize: 30),))
+                    onTap: (){
+
+                    },
+                    child: Text(Apptext.SingUp, style: TextStyle(fontSize: 30),)
+                ),
               ],
             ),
           ),
